@@ -1,0 +1,30 @@
+<snippet>
+	<content><![CDATA[
+vector<int> slidingMaximum(const vector<int> &A, int B) {
+    deque<int> dq;
+    vector<int> ans;
+    for(int i =0; i<B; i++){
+        while(!dq.empty() and A[i] >= A[dq.back()]){
+            dq.pop_back();
+        }
+        dq.push_back(i);
+    }
+    for(int i = B; i<A.size(); i++){
+        ans.push_back(A[dq.front()]);
+        while(!dq.empty() and dq.front() <= i-B){
+            dq.pop_front();
+        }
+        while(!dq.empty() and A[i] >= A[dq.back()]){
+            dq.pop_back();
+        }
+        dq.push_back(i);
+    }
+    ans.push_back(A[dq.front()]);
+    return ans;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>sliding_window_max</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+//-- prime vector generation
+vll pr;
+void SieveOfEratosthenes(ll n){
+	bool prime[n+1];
+	mset(prime, true);
+	for(ll p=2; p*p<=n; p++) if( prime[p] == true) for(ll i=p*p; i<=n; i+=p) prime[i]=false;
+	for(ll p=2; p<=n; p++) if(prime[p]) pr.pb(p);
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>prime sieve</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

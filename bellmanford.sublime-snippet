@@ -1,0 +1,52 @@
+<snippet>
+	<content><![CDATA[
+//Bellman-Ford algorithm
+	vector<tuple<int, int, ll>> edgl;
+	vll dist(n+1, INFF);
+	vi pred(n+1, -1);
+	for(i=0; i<m; i++){
+		int t1, l1;
+		ll w1;
+		cin>>t1>>l1>>w1;
+		edgl.pb({t1, l1, w1});
+		edgl.pb({l1, t1, w1});
+	}
+
+	//get vertex
+	int v, neg;
+	cin>>v;
+	dist[v]=0;
+	//for negative cycle, i=0, otherwise i=1
+	for(i=0; i<n; i++){
+		bool op = false;
+		//negative cycle detecion
+		neg = -1;
+		for(auto edge: edgl){
+			int u, to;ll w;
+			tie(u, to, w) = edge;
+
+			if(dist[u]<INFF){
+				if(dist[to] > dist[u]+w){
+					op = true;
+					dist[to] = dist[u]+w;
+					pred[to] = u;
+					neg = to;
+				}
+			}
+		}
+
+		if(!op)break;
+	}
+	//debug(dist);
+	//debug(pred);
+
+	if(neg!=-1){
+		// negative cycle exists at vertex neg
+		// use pred to back track and obtain complete cycle
+	}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>bellman-ford</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

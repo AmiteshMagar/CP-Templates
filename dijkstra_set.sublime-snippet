@@ -1,0 +1,38 @@
+<snippet>
+	<content><![CDATA[
+// Dijkstra for Sparse graphs using set
+// slower than the priority_queue implementation
+// log n for sets and log m for pq, use the one that suits.
+#define pli pair<ll, int>
+void dijkstra(int s, vector<ll> &dist, vector<int> &pred){
+	int n = adj.size();
+	dist.assign(n, INF);
+	pred.assign(n, -1);
+
+	dist[s] = 0;
+	set<pli> q;
+	q.insert(mp(0, s));
+
+	while(!q.empty()){
+		int v = q.begin()->se;
+		q.erase(q.begin());
+
+		for(auto edge: adj[v]){
+			int to = edge.fi;
+			ll len = edge.se;
+
+			if(dist[v] + len < dist[to]){
+				q.erase({dist[to], to});
+				dist[to] = dist[v] + len;
+				pred[to] = v;
+				q.insert(mp(dist[to], to));
+			}
+		}
+	}
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>dijkstra_set</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

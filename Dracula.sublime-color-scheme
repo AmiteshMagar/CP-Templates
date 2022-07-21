@@ -1,0 +1,20 @@
+// Documentation at https://www.sublimetext.com/docs/color_schemes.html
+{
+	"variables":
+	{
+		"black3": "hsl(245, 49.5%, 15.5%)",
+        "white3": "hsl(0, 0%, 100%)"
+	},
+	"globals":
+	{
+		"foreground": "var(white3)",
+        "background": "var(black3)",
+        "line_highlight": "hsl(238, 45%, 32%)",
+        // "line_highlight": "hsl(258, 52%, 75.5%)",
+        "name, Keyword": "#ff0000"
+	},
+	"rules":
+	[
+		
+	]
+}

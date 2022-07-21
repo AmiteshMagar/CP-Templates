@@ -1,0 +1,18 @@
+{
+	"color_scheme": "Mariana.sublime-color-scheme",
+	"font_size": 18,
+	"theme": "Default Dark.sublime-theme",
+	"word_wrap": "true",
+	"scroll_past_end": true,
+	"trim_trailing_white_space_on_save": "not_on_caret",
+	"hot_exit": "true",
+	"remember_open_files": "true",
+	"tab_size": 4,
+	"detect_indentation": false,
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+	"margin":-10,
+	"highlight_line":true,
+}

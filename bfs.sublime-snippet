@@ -1,0 +1,29 @@
+<snippet>
+	<content><![CDATA[
+vector<int> parent;
+vector<int> dist;
+void bfs(int f){
+	dist.resize(n+1,0);
+	parent.resize(n+1,-1);
+	queue<int> breadth_first;
+	breadth_first.push(f);
+	used[f] = true;
+	while(!breadth_first.empty()){
+		int v = breadth_first.front();
+		breadth_first.pop();
+		for(auto u: adj[v]){
+			if(!used[u]){
+				dist[u] = dist[v]+1;
+				parent[u] = v;
+				breadth_first.push(u);
+				used[u] = true;
+			}
+		}
+	}
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>bfs</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

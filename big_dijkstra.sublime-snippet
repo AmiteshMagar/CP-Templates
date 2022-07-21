@@ -1,0 +1,43 @@
+<snippet>
+	<content><![CDATA[
+//declare and pass dist and pred by reference.
+//using pred we can backtrack a way, we can exclude, it hence commented out
+//pred is in form of a succesor graph
+void dijkstra(int s, vector<ll> &dist/*, vector<int> &pred*/){
+	// O(n^2 + m)
+	int n = adj.size()-1;
+	dist.assign(n+1, INFF);
+	// pred.assign(n+1, -1);
+	vector<bool> vis(n+1, false);
+
+	dist[s] =0;
+
+	for(int i=0; i<=n;i++){
+		int v = -1;
+		//search for relaxation, in case a shorter direct path exists.
+		for(int j=0; j<=n;j++){
+			if(!vis[j] && (v==-1 || dist[j]<dist[v])){
+				v = j;
+			}
+		}
+		if(dist[v]==INFF){
+			break;
+		}
+		vis[v] = true;
+		//direct brute force scouting
+		for(auto edge : adj[v]){
+			int to = edge.fi;
+			ll len = edge.se;
+			if(dist[to] > dist[v]+len){
+				dist[to] = dist[v]+len;
+				// pred[to] = v;
+			}
+		}
+	}
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>bigdijkstra</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

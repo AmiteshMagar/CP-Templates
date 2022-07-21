@@ -1,0 +1,36 @@
+<snippet>
+	<content><![CDATA[
+//for sparse graphs, m << n^2. commented out pred, not needed mostly
+// O(mlogm)
+void dijkstra(int s, vector<ll> &dist/*, vector<int> &pred*/){
+	int n = adj.size()-1;
+	dist.assign(n+1, INFF);
+	// pred.assign(n+1, -1);
+	dist[s] = 0;
+	using pli = pair<ll, int>;
+	priority_queue< pli, vector<pli>, greater<pli>> pq;
+	pq.push(mp(0, s));
+
+	while(!pq.empty()){
+		int v = (pq.top()).se;
+		ll dist_v = (pq.top()).fi;
+		pq.pop();
+		if(dist_v != dist[v]) continue;
+
+		for(auto edge : adj[v]){
+			int to = edge.fi;
+			ll len = edge.se;
+			if(dist[v] +len < dist[to]){
+				dist[to] = dist[v]+len;
+				// pred[to] = v;
+				pq.push(mp(dist[to], to));
+			}
+		}
+	}
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>dijkstra</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

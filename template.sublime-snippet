@@ -1,0 +1,101 @@
+<snippet>
+	<content><![CDATA[
+#include<bits/stdc++.h>
+#pragma GCC optimize ("O3")
+#ifdef ONLINE_JUDGE
+#pragma GCC target("sse4.1")
+#pragma GCC optimization("unroll-loops")
+#endif
+//#include<ext/pb_ds/assoc_container.hpp>
+
+//using namespace __gnu_pbds;
+using namespace std;
+typedef long long ll;
+typedef unsigned long long ull;
+typedef long double lld;
+#define rep(i,n) for(i=0; i<n; i++)
+#define repr(i,n) for(i=n; i>0;i--)
+#define repa(i,a,n) for(i=a; i<n;i++)
+#define repit(x, k) for(auto x:k)
+#define vi vector<int>
+#define vll vector<ll>
+#define vvll vector<vector<long long>>
+#define pii pair<int, int>
+#define pll pair<ll, ll>
+#define mll map<ll, ll>
+#define fi first
+#define se second
+#define pb(t) push_back(t)
+#define pf(t) push_front(t)
+#define ins(t) insert(t)
+#define mp(a,b) make_pair(a, b)
+#define mtup(a,b,c) make_tuple(a,b,c)
+#define fbo(x) find_by_order(x) //value at position
+#define ook(x) order_of_key(x) //position of value
+#define lowb(x) lower_bound(x)
+#define uppb(x) upper_bound(x)
+#define mset(a, val) memset(a, val, sizeof(a))
+#define lexcomp(a,b) lexicographical_compare(a, a+n, b, b+n)
+#define lex(str1, str2) lexicographical_compare(str1.begin(), str1.end(), str2.begin(), str2.end())
+#define present(s,x) (s.find(x) != s.end()) //returns false if absent
+#define itos(x) to_string(x)
+#define stoi(x) stoll(x)
+#define all(v) v.begin(), v.end()
+//binary
+#define totones(x) __builtin_popcountll(x)
+#define tzeros(x) __builtin_ctzll(x)
+#define lzeros(x) __builtin_clzll(x)
+#define parity(x) __builtin_parityll(x)
+#define SPEED   ios::sync_with_stdio(false); cin.tie(0); cout.tie(0)
+
+// DEBUGGING
+#define debug(x) cerr<<#x<<" ";__print(x);cerr<<"-------\n";
+
+template <class T>void __print(T t) {cerr << t;}
+template<class T,class V>void __print(pair <T,V> p){cerr<<"{";__print(p.fi);cerr<<", ";__print(p.se);cerr<<"}\n";}
+template<class T>void __print(vector<T> v){cerr<<"[ ";for(T i:v){__print(i);cerr<<" ";}cerr<<"]\n";}
+template<class T>void __print(set<T> v){cerr<<"[ ";for(T i:v){__print(i);cerr<<" ";}cerr<<"]\n";}
+template<class T>void __print(multiset<T> v){cerr<<"[ ";for(T i:v){__print(i);cerr<<" ";}cerr<<"]";}
+template<class T,class V>void __print(map<T,V>m){for(auto i:m){cerr<<"{";__print(i.fi);cerr<<" [";__print(i.se);cerr<<"] "<<"}\n";}}
+// END DEBUGGING
+
+// IMP COSTANTS
+#define M 1000000007 // 9 zeros + 7
+#define M2 998244353
+#define epsilon 1e-9
+#define PI  3.14159265
+#define INF 1e9+5 // 9 zeros + 5
+#define INFF  1000000000000000005ll //18 zeros + 5
+
+#define pqb priority_queue<int>
+#define pqs priority_queue<int, vi, greater<int>>
+//template <typename T>
+//typedef tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update> indexed_set;
+
+int main(){
+	SPEED;
+	#ifndef ONLINE_JUDGE
+		freopen("input.txt", "r", stdin);
+		freopen("output.txt", "w", stdout);
+	#endif
+	ll i,j;
+
+	//int t;
+	//cin>>t;
+	//while(t--){
+
+	//}
+
+
+
+
+
+	return 0;
+}
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>template</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

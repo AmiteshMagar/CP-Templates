@@ -1,0 +1,31 @@
+<snippet>
+	<content><![CDATA[
+//-- linear sieve factorizing
+vll last_prime;
+void LinearSieve(ll n){
+	last_prime.resize(n+1);
+	iota(all(last_prime), 0);
+	for(ll i = 2; i*i<=n; i++){
+		if(last_prime[i] == i){
+			for(ll j = 2*i; j<=n; j+=i){
+				last_prime[j] = i;
+			}
+		}
+	}
+}
+
+/* Method of factorization
+void factor(ll num){
+	while(num>1){
+		ll val = last_prime[num];
+		//task with val;
+		num/=val;
+	}
+}*/
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>linear sieve factorizing</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

@@ -1,0 +1,23 @@
+<snippet>
+	<content><![CDATA[
+//compression technique for Fenwick
+int compress(vector<ll> &arr){
+	int i;
+	map<ll, int> m;
+	rep(i,(int)arr.size()) m[arr[i]]=0;
+	int rank =0;
+
+	for(auto &p: m){
+		p.second = rank++;
+	}
+	rep(i,(int)arr.size()){
+		arr[i] = m[arr[i]];
+	}
+	return rank;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>compression</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

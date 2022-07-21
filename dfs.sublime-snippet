@@ -1,0 +1,17 @@
+<snippet>
+  <content><![CDATA[
+void dfs(int v){
+	used[v]=1;
+  	for(int u: adj[v]){
+		if(!used[u]){
+	  	dfs(u);
+		}
+  	}
+}
+
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>dfs</tabTrigger>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <scope>source.c++</scope>
+</snippet>

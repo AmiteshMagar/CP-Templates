@@ -1,0 +1,17 @@
+<snippet>
+	<content><![CDATA[
+//binarizer, give a number and itll give you 
+//its binary form in string format
+string bin(ll n){
+  	string res="";
+  	do{if(n&1){res= '1'+res;}
+    	else{res= '0'+res;}
+    	n=n>>1;}while(n);
+  	return res;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>binstring</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

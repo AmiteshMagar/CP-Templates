@@ -1,0 +1,26 @@
+<snippet>
+	<content><![CDATA[
+
+// DEBUGGING
+#ifndef ONLINE_JUDGE
+#define deb(x) cerr<<x<<" ";
+#define debug(x) cerr<<#x<<" ";__print(x);cerr<<"\n-------\n";
+#define enl cerr<<nl;
+template <class T>void __print(T t) {cerr << t;}
+template<class T,class V>void __print(pair <T,V> p){cerr<<"{";__print(p.fi);cerr<<", ";__print(p.se);cerr<<"}\n";}
+template<class T>void __print(vector<T> v){cerr<<"[ ";for(T i:v){__print(i);cerr<<" ";}cerr<<"]\n";}
+template<class T>void __print(set<T> v){cerr<<"[ ";for(T i:v){__print(i);cerr<<" ";}cerr<<"]\n";}
+template<class T>void __print(multiset<T> v){cerr<<"[ ";for(T i:v){__print(i);cerr<<" ";}cerr<<"]";}
+template<class T,class V>void __print(map<T,V>m){for(auto i:m){cerr<<"{";__print(i.fi);cerr<<" [";__print(i.se);cerr<<"] "<<"}\n";}}
+#else
+#define deb(x) 42;
+#define debug(x) 42;
+#define enl 42;
+#endif
+// END DEBUGGING
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_debugger</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>
